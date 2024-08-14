@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: posts-service
+
+server:
+  port: 6000
+  servlet:
+    context-path: /api/v1/post-service
+
+comment-service:
+  uri: http://localhost:7000/api/v1/comment-service/comments
+
+backend:
+  uri: https://jsonplaceholder.typicode.com/posts
+
+oauth:
+  grantType: client_credentials
+  clientId: post-service-v1-cc
+  clientSecret: sycugGMCAgDSOoN0kCoqEVDgcJCBlIjT
+  scope: openid email profile
+  auth:
+    uri: http://localhost:7080/realms/master/protocol/openid-connect/token
